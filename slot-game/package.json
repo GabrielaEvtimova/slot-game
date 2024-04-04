@@ -1,0 +1,13 @@
+{
+  "name": "slot-game",
+  "version": "1.0.0",
+  "description": "slot-game back-end",
+  "main": "main.js",
+  "scripts": {
+    "start": "node ./dist/slotGame.js",
+    "build": "tsc --build tsconfig.json",
+    "build:dev": "tsc --build tsconfig.json --watch"
+  },
+  "keywords": [],
+  "author": "Gabriela Evtimova"
+}
