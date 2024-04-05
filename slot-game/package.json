@@ -4,10 +4,13 @@
   "description": "slot-game back-end",
   "main": "main.js",
   "scripts": {
-    "start": "node ./dist/slotGame.js",
+    "start": "ts-node ./src/main.ts",
     "build": "tsc --build tsconfig.json",
     "build:dev": "tsc --build tsconfig.json --watch"
   },
   "keywords": [],
-  "author": "Gabriela Evtimova"
+  "author": "Gabriela Evtimova",
+  "dependencies": {
+    "ts-node": "^10.9.2"
+  }
 }
