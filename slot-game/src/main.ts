@@ -25,7 +25,7 @@ const betAmount: number = 1;
 let totalWins: number = 0;
 const startTime: number = Date.now();
 
-for (let spin = 0; spin < numSpins; spin++) {
+for (let spin: number = 0; spin < numSpins; spin++) {
   const slotGame: SlotGame = new SlotGame(
     reelsCount,
     rowsCount,
@@ -38,7 +38,7 @@ for (let spin = 0; spin < numSpins; spin++) {
   totalWins += slotGame.totalWin;
 }
 
-const executionTime = Date.now() - startTime;
+const executionTime: number = Date.now() - startTime;
 
 /** Output simulation results */
 console.log("=========================================================");
