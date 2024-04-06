@@ -24,5 +24,8 @@ npm install
 cd slot-game/src
 npm start
 ```
-5. You can uncomment the code in main.ts and try freeSpins execution
-6. **Play Responsibly!**
+5. The program will execute a simulation script that iterates a large amount of spins `(1000 by default)` with information about total wins, bets `(1 by default)` and execution speed. You can change the amount of spins and bets in any time.
+
+6. You can uncomment the code in main.ts and try a single spin
+   
+7. **Have Fun & Play Responsibly! 🙃**
