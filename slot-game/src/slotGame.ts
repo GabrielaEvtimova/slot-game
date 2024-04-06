@@ -1,11 +1,4 @@
-type LineResult = {
-  line: number[];
-  symbol: number;
-  payout: number;
-};
-
-type TotalWin = number;
-
+import { LineResult, TotalWin } from "./types/types";
 export default class SlotGame {
   #reelsCount: number;
   #rowsCount: number;
@@ -93,7 +86,7 @@ export default class SlotGame {
     }
 
     console.log(this.#finalResult);
-    console.log("You won: " + this.#totalWin);
+    console.log(`You won: ${this.#totalWin}`);
   }
 
   spin(): void {
@@ -101,6 +94,7 @@ export default class SlotGame {
     console.log("Screen:");
     console.table(screen);
 
+    console.log("Lines:");
     this.#lastCalculations(screen);
   }
 }
