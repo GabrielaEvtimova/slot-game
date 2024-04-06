@@ -23,6 +23,10 @@ export default class SlotGame {
     this.#reels = reels;
   }
 
+  get totalWin() {
+    return this.#totalWin
+  }
+
   #renderScreen(): number[][] {
     const screen: number[][] = [];
 
