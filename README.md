@@ -29,3 +29,10 @@ npm start
 6. You can uncomment the code in main.ts and try a single spin
    
 7. **Have Fun & Play Responsibly! 🙃**
+
+
+### Schema:
+
+![drawing](./slot-game/src/images/drawing.png)
+
+![lines](./slot-game/src/images/lines.png)
