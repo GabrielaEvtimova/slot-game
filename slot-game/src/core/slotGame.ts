@@ -1,4 +1,4 @@
-import { LineResult, TotalWin } from "./types/types";
+import { LineResult, TotalWin } from "../types/types";
 export default class SlotGame {
   #reelsCount: number;
   #rowsCount: number;
@@ -24,7 +24,7 @@ export default class SlotGame {
   }
 
   get totalWin() {
-    return this.#totalWin
+    return this.#totalWin;
   }
 
   #renderScreen(): number[][] {
@@ -51,12 +51,12 @@ export default class SlotGame {
       const result: number[] = [];
 
       for (let i = 1; i <= line.length; i++) {
-        const matrixRow: number = line[i - 1];
-        const matrixCol: number = i;
-        const lineSymbols: number = screen[matrixRow][matrixCol - 1];
+        const sreenRow: number = line[i - 1];
+        const screenCol: number = i;
+        const lineSymbols: number = screen[sreenRow][screenCol - 1];
 
         result.push(lineSymbols);
-        this.#symbol = screen[matrixRow][0];
+        this.#symbol = screen[sreenRow][0];
       }
       allLinesSymbols.push(result);
       this.#finalResult.push({ line: line, symbol: this.#symbol, payout: 0 });
@@ -66,16 +66,15 @@ export default class SlotGame {
   }
 
   #lastCalculations(screen: number[][]): void {
-    const result: number[] = [];
-    const linesSymbols = this.#produceAllLinesSymbols(screen);
+    const linesSymbols: number[][] = this.#produceAllLinesSymbols(screen);
 
     for (let i = 0; i < linesSymbols.length; i++) {
-      let count = 1;
-      const line = linesSymbols[i];
+      let count: number = 1;
+      const line: number[] = linesSymbols[i];
 
       for (let j = 1; j <= line.length; j++) {
-        const prev = line[j - 1];
-        const curr = line[j];
+        const prev: number = line[j - 1];
+        const curr: number = line[j];
         if (prev === curr) {
           count++;
         } else {
@@ -83,9 +82,9 @@ export default class SlotGame {
         }
       }
 
-      const keyInSymbolsToFind = this.#finalResult[i].symbol;
-      const values = this.#symbols[keyInSymbolsToFind];
-      this.#finalResult[i].payout = values[count - 1];
+      const keyInSymbolsToFind: number = this.#finalResult[i].symbol;
+      const symbolValues: number[] = this.#symbols[keyInSymbolsToFind];
+      this.#finalResult[i].payout = symbolValues[count - 1];
       this.#totalWin += this.#finalResult[i].payout;
     }
 

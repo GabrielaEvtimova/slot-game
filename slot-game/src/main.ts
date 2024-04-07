@@ -1,5 +1,5 @@
 import config from "./data/configuration";
-import SlotGame from "./slotGame";
+import SlotGame from "./core/slotGame";
 
 const { reelsCount, rowsCount, symbols, lines, reels } = config;
 
@@ -12,7 +12,6 @@ const { reelsCount, rowsCount, symbols, lines, reels } = config;
 //   reels
 // );
 // slotGame.spin();
-
 
 /** A simple simulation script that iterates a large amount of spins with information about total wins, bets and execution speed */
 
@@ -48,4 +47,3 @@ console.log(`Execution time: ${(executionTime / 1000).toFixed(2)} seconds`);
 console.log(
   `Average time per spin: ${(executionTime / numSpins).toFixed(2)} milliseconds`
 );
-
