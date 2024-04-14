@@ -29,13 +29,25 @@ export default class SlotGame {
 
   #renderScreen(): number[][] {
     const screen: number[][] = [];
+    const listOfIndices: number[] = [];
+    let reelIndex: number = 0;
 
-    for (let row = 0; row < this.#rowsCount; row++) {
+    for (let i: number = 0; i < this.#reelsCount; i++) {
+      const reelFirstRowIndex: number = Math.floor(
+        Math.random() * this.#reels[i].length
+      );
+      listOfIndices.push(reelFirstRowIndex);
+    }
+
+    for (let row: number = 0; row < this.#rowsCount; row++) {
       screen[row] = [];
 
-      for (let col = 0; col < this.#reelsCount; col++) {
-        const reelIndex = Math.floor(Math.random() * this.#reels[col].length);
-        const reel = this.#reels[col][reelIndex];
+      for (let col: number = 0; col < this.#reelsCount; col++) {
+        reelIndex = listOfIndices[col] + row;
+        if (reelIndex >= this.#reels[col].length) {
+          reelIndex = reelIndex % this.#reels[col].length;
+        }
+        const reel: number = this.#reels[col][reelIndex];
         screen[row][col] = reel;
       }
     }
@@ -45,12 +57,12 @@ export default class SlotGame {
   #produceAllLinesSymbols(screen: number[][]): number[][] {
     const allLinesSymbols: number[][] = [];
 
-    for (let i = 0; i < this.#lines.length; i++) {
-      const line = this.#lines[i];
+    for (let i: number = 0; i < this.#lines.length; i++) {
+      const line: number[] = this.#lines[i];
 
       const result: number[] = [];
 
-      for (let i = 1; i <= line.length; i++) {
+      for (let i: number = 1; i <= line.length; i++) {
         const sreenRow: number = line[i - 1];
         const screenCol: number = i;
         const lineSymbols: number = screen[sreenRow][screenCol - 1];
@@ -68,11 +80,11 @@ export default class SlotGame {
   #lastCalculations(screen: number[][]): void {
     const linesSymbols: number[][] = this.#produceAllLinesSymbols(screen);
 
-    for (let i = 0; i < linesSymbols.length; i++) {
+    for (let i: number = 0; i < linesSymbols.length; i++) {
       let count: number = 1;
       const line: number[] = linesSymbols[i];
 
-      for (let j = 1; j <= line.length; j++) {
+      for (let j: number = 1; j <= line.length; j++) {
         const prev: number = line[j - 1];
         const curr: number = line[j];
         if (prev === curr) {

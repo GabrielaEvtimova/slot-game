@@ -1,9 +1,9 @@
 const config: {
-    reelsCount: number;
-    rowsCount: number;
-    symbols: {[key: number]: number[]};
-    lines: number[][],
-    reels: number[][]
+  reelsCount: number;
+  rowsCount: number;
+  symbols: { [key: number]: number[] };
+  lines: number[][];
+  reels: number[][];
 } = {
   reelsCount: 5,
   rowsCount: 3,
