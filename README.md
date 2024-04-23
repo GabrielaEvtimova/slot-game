@@ -12,7 +12,8 @@
 1. Clone the repository:
 
 ```js
-git clone [repository-url](https://github.com/GabrielaEvtimova/slot-game.git)
+// Clone repository url
+git clone https://github.com/GabrielaEvtimova/slot-game.git
 ```
 
 2. Navigate into the project directory:
