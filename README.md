@@ -2,10 +2,18 @@
 
 ## Back-End (Node.js) Project
 
+Back-end logic for a simple slot game with a given configuration
+
 ### Requirements:
 
-- OOP
-- TypeScript
+- Code must be written in TypeScript
+- Code must be Object-Oriented
+- There must be a slot class with a spin method
+- Spin method should output the game result
+- Result should contain reels position and symbols on the screen
+- Result should contain lines payout
+- Result must be printed in console (in any form)
+- A simple simulation script that iterates a large amount of spins with information about total wins, bets and execution speed
 
 ### Installation
 
